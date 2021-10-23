@@ -4,7 +4,7 @@ license="Public domain"
 
 [[mods]]
 modId="headbump"
-version="1.0"
+version="1.0.1"
 displayName="Head Bump"
 #updateJSONURL=""
 displayURL="https://www.curseforge.com/minecraft/mc-mods/head-bump"

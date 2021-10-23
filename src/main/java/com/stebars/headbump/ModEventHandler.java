@@ -6,7 +6,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ReuseableStream;
-import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -33,11 +32,11 @@ public class ModEventHandler {
 		if (adjusted.y == v.y) return;
 
 		double diff = v.y - adjusted.y; // This is magnitude of hit. It's ~0.05 in a 3-block gap, 0.42 in a 2-block gap
-		if (diff < 0.15) return;
+		if (diff < 0.03) return;
 
-		float damage = diff < .3 ? .1F : .2F; // so either 5% or 10% of a heart
+		float damage = diff < .2 ? .1F : .2F; // so either 5% or 10% of a heart
 		player.hurt(DamageSource.FALLING_BLOCK, damage);
-		player.playSound(SoundEvents.PLAYER_SMALL_FALL, 1.0F, 1.0F);
+		//player.playSound(SoundEvents.PLAYER_SMALL_FALL, 1.0F, 1.0F);
 	}
 
 	// Copied from Entity.collide, because it's private
